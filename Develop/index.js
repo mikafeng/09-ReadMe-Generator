@@ -1,20 +1,10 @@
 // TODO: Include packages needed for this application
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-    //Title: Enter project title:
-    // Description: Enter description of project:
-    // Installation: Enter installation instructions:
-    // Usage: Enter usage information:
-    // Contributing: Enter contribution guidelines:
-    // Tests: Enter test instructions:
-    // Liscence: Choose Liscence: (badge added to top of ReadMe)
-    // Questions: Enter GitHub Username and Link:
-    //     >How to reach me with additional questions: Enter Email:
-    // Table of Contents: Links to corresponding README sections:
-
-const questions = [ {
+const questions = inquirer.prompt([
+    {
     type: 'input',
     name: 'title',
     message: 'Project title?'
@@ -62,11 +52,27 @@ const questions = [ {
         filter(val) {
             return val.toLowerCase();
         }
-    }];
+    }
+]);
+
+function runQuery({
+    return inquirer.prompt(questions)
+    .then((answers) => {
+        console.log(answers)
+        return(answers)
+    })
+    .catch((error) => {
+        console.log('error')
+    })
+});
+
+runQuery();
 
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) { }
+
+
 
 
 // TODO: Create a function to initialize app
