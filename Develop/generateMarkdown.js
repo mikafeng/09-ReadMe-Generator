@@ -10,20 +10,9 @@
 // // If there is no license, return an empty string
 // function renderLicenseSection(license) { }
 
-// // TODO: Create a function to generate markdown for README
-// function generateMarkdown(data) {
-//     return `# ${data.title}
-
-// `;
-// }
-
-// module.exports = generateMarkdown;
-
-
-
-class MarkDown {
-    static generateReadme(answers){
-        return `
+// Create a function to generate markdown for README
+function generateMarkdown(answers) {
+    return `
     # ${answers.title}
 
     ## Table of Content
@@ -58,7 +47,6 @@ class MarkDown {
     ${answers.license}
     
      `
-    }
-}
+};
 
-module.exports = MarkDown
+module.exports = generateMarkdown;

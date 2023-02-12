@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
-const generateMarkdown = require('');
+const generateMarkdown = require('./develop/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions=[
@@ -51,17 +51,15 @@ const questions=[
         name: 'license',
         message: 'License?',
         choices: ['MIT', 'ISC', 'GNUPLv3'],
-        filter(val) {
-            return val.toLowerCase();
-        }
     }
 ];
 
 
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) { }
-
+function writeToFile(fileName, answers) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), answers);
+};
 
 
 
@@ -70,7 +68,7 @@ function init() {
     inquirer.prompt(questions).then((responses) =>
     {
         console.log('Writing ReadMe File...'),
-        writeToFile("", generateMarkdown({responses}))
+        writeToFile("./markdown/README.md", generateMarkdown({responses}))
     })
  }
 
