@@ -1,5 +1,7 @@
 # ReadMe-Generator
 
+![MIT license](https://img.shields.io/github/license/mikafeng/ReadMe-Generator?style=for-the-badge)
+
 GIVEN a command-line application that accepts user input
 
 WHEN I am prompted for information about my application repository
