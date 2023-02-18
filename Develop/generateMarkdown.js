@@ -1,20 +1,29 @@
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
-// function renderLicenseBadge(license) { }
-
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-// function renderLicenseLink(license) { }
-
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
-// function renderLicenseSection(license) { }
-
 // Create a function to generate markdown for README
+
+    
+function renderLicenseBadge (licence) {
+    let renderLicenseBadge;
+    switch(licence){
+        case "MIT": 
+            renderLicenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+        case "MPL 2.0": 
+            renderLicenseBadge = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+        case "GPL 3.0": 
+            renderLicenseBadge = "[![License: GPL 3.0](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+        case "APACHE 2.0": 
+            renderLicenseBadge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+        default: "";
+    }
+
+    return renderLicenseBadge;
+};
+
+
 function generateMarkdown(answers) {
 return `
 
 # ${answers.title}
+
 
 ***
 
@@ -61,14 +70,15 @@ ${answers.test}
 
 ## Questions
 
-${answers.email}
-${answers.github}
+If there are additional questions, please reach out to:
+Email: ${answers.email}
+GitHub Repo: ${answers.github}
 
 ---
 
 ## License
-
-${answers.license}
+This project utilizes the following license:
+${renderLicenseBadge(answers.license)}
 
 `};
 
