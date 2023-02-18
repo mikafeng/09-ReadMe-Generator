@@ -17,8 +17,8 @@ Title of Project, Description, Table of Contents, Installation, Usage, License, 
 - User will need npm package manager/Node.js to run application.
 - Copy source code into a local repository. 
 - Open folder in terminal.
-- Type <npm install> in command line to install necessary dependencies to run the application.
-- Type <npm start> or <node index.js>in command line to begin appllication.
+- Type `npm install` in command line to install necessary dependencies to run the application.
+- Type `npm start` or `node index.js` in command line to begin appllication.
 - Answer prompts in command line.
 - README.md file will be saved to markdown folder.
 
