@@ -51,7 +51,7 @@ const questions=[
         type: 'list',
         name: 'license',
         message: 'License?',
-        choices: ['MIT', 'MPL 2.0', 'GPL 3.0', 'Apache 2.0'],
+        choices: ['MIT', 'MPL 2.0', 'GPL 3.0', 'Apache'],
     }
 ];
 

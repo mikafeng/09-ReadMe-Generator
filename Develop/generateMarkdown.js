@@ -6,18 +6,30 @@ function renderLicenseBadge (licence) {
     switch(licence){
         case "MIT": 
             renderLicenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+            break;
         case "MPL 2.0": 
             renderLicenseBadge = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+            break;
         case "GPL 3.0": 
             renderLicenseBadge = "[![License: GPL 3.0](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+            break;
         case "APACHE 2.0": 
             renderLicenseBadge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+            break;
         default: "";
     }
 
     return renderLicenseBadge;
 };
 
+
+function renderLicenseSection(license) {
+    if (license === null) {
+        return ""
+    } else {
+        return `${renderLicenseBadge(license)}`
+    }
+}
 
 function generateMarkdown(answers) {
 return `
@@ -77,8 +89,9 @@ GitHub Repo: ${answers.github}
 ---
 
 ## License
-This project utilizes the following license:
-${renderLicenseBadge(answers.license)}
+This project utilizes the following license: ${answers.license}
+
+${renderLicenseSection(answers.license)}
 
 `};
 
